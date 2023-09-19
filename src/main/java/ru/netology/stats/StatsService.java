@@ -3,20 +3,21 @@ package ru.netology.stats;
 
 public class StatsService {
     public int salesSum(int[] amount) {
-        int AllIn = 0;
+        int allIn = 0;
         for (int i = 0; i < amount.length; i++) {
-            AllIn += amount[i];
+            allIn += amount[i];
         }
-        return AllIn;
+        return allIn;
     }
 
-    public int MediallySum(int[] amount) {
+    public int mediallySum(int[] amount) {
+       int medium = salesSum(amount);
 
-        return salesSum(amount) / 12;
+        return medium / 12;
     }
 
 
-    public int MaxSales(int[] amount) {
+    public int maxSales(int[] amount) {
         int maxMonth = 0; // номер месяца с максимальными продажами среди просмотренных ранее
 
         for (int i = 0; i < amount.length; i++) {
@@ -28,7 +29,7 @@ public class StatsService {
         return maxMonth + 1;
     }
 
-    public int MinSales(int[] amount) {
+    public int minSales(int[] amount) {
         int minMonth = 0;
 
         for (int i = 0; i < amount.length; i++) {
@@ -40,19 +41,19 @@ public class StatsService {
         return minMonth + 1;
     }
 
-    public int BelowAverage(int[] amount) {
+    public int belowAverage(int[] amount) {
         int MinimumQuantity = 0;
         for (int i = 0; i < amount.length; i++) {
-            if (amount[i] < MediallySum(amount)) {
+            if (amount[i] < mediallySum(amount)) {
                 MinimumQuantity += 1;
             }
         }
         return MinimumQuantity;
     }
-    public int AboveAverage(int[] amount) {
+    public int aboveAverage(int[] amount) {
         int MaximumQuantity = 0;
         for (int i = 0; i < amount.length; i++) {
-            if (amount[i] > MediallySum(amount)) {
+            if (amount[i] > mediallySum(amount)) {
                 MaximumQuantity += 1;
             }
         }
