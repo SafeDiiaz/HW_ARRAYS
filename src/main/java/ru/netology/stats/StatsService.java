@@ -13,7 +13,7 @@ public class StatsService {
     public int mediallySum(int[] amount) {
        int medium = salesSum(amount);
 
-        return medium / 12;
+        return medium / amount.length;
     }
 
 
@@ -43,8 +43,9 @@ public class StatsService {
 
     public int belowAverage(int[] amount) {
         int MinimumQuantity = 0;
+        int medially = mediallySum(amount);
         for (int i = 0; i < amount.length; i++) {
-            if (amount[i] < mediallySum(amount)) {
+            if (amount[i] < medially) {
                 MinimumQuantity += 1;
             }
         }
@@ -52,8 +53,9 @@ public class StatsService {
     }
     public int aboveAverage(int[] amount) {
         int MaximumQuantity = 0;
+        int medially = mediallySum(amount);
         for (int i = 0; i < amount.length; i++) {
-            if (amount[i] > mediallySum(amount)) {
+            if (amount[i] > medially) {
                 MaximumQuantity += 1;
             }
         }
