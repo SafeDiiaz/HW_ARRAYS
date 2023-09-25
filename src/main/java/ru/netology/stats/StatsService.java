@@ -42,24 +42,24 @@ public class StatsService {
     }
 
     public int belowAverage(int[] amount) {
-        int MinimumQuantity = 0;
+        int minimumQuantity = 0;
         int medially = mediallySum(amount);
         for (int i = 0; i < amount.length; i++) {
             if (amount[i] < medially) {
-                MinimumQuantity += 1;
+                minimumQuantity += 1;
             }
         }
-        return MinimumQuantity;
+        return minimumQuantity;
     }
     public int aboveAverage(int[] amount) {
-        int MaximumQuantity = 0;
+        int maximumQuantity = 0;
         int medially = mediallySum(amount);
         for (int i = 0; i < amount.length; i++) {
             if (amount[i] > medially) {
-                MaximumQuantity += 1;
+                maximumQuantity += 1;
             }
         }
-        return MaximumQuantity;
+        return maximumQuantity;
     }
 
 }
